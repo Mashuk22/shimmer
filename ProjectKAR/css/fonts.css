@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Bitter Regular"), local("Bitter-Regular"),
+    url("../fonts/bitter-v15-latin-regular-efa224f0529027fd03eecdf96a20811ac7d22648c2bc53b26302e231cc82b262.woff2")
+      format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "hyperwave-min";
+  src: url("../fonts/hyperwave-01-45407974de9995066e064f64671d485bc971a1277e8338261a2ea9d6bc6bf3c8.woff2")
+    format("woff2");
+  font-weight: 400;
+  unicode-range: U+0041 -U59;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "hyperwave";
+  src: url("../fonts/395005_0_0-6c52acb086f0ab94f927a33bb024bbed12a0e5d7b05a1a2877f27d80c4bcc70c.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "campton";
+  src: url("../fonts/390D95_0_0-9f008b9bee1c63c36a61c10bcb405bf0d64feda47ace41115f8d9605f6412925.woff2")
+    format("woff2");
+  font-weight: 400;
+  unicode-range: U+0-0029-10FFFF;
+  font-display: swap;
+}
+@font-face {
+  font-family: "campton";
+  src: url("../fonts/2E2A1F_0_0-aee1552107ed9a8efeafaca8ca67ddd4bcbddcf7120dc6b78069403abe1e6f0b.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "camptonweb";
+  src: url("../fonts/390D95_0_0.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "camptonweb";
+  src: url("../fonts/2E2A1F_0_0.eot");
+  src: url("../fonts/2E2A1F_0_0.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/2E2A1F_0_0.woff2") format("woff2"),
+    url("../fonts/2E2A1F_0_0.woff") format("woff"),
+    url("../fonts/2E2A1F_0_0.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+.fs-small {
+  font-size: 0.75em;
+  letter-spacing: 0.33em;
+  line-height: 1.666;
+}
+
+.fs-regular {
+  font-size: 0.875em;
+  line-height: 1.5;
+}
+
+.fs-medium {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+.fs-large {
+  font-size: 3.125em;
+  line-height: 1.2;
+}
+
+.fs-xlarge {
+  font-size: 2.5em;
+}
+
+@keyframes background-glitch {
+  0% {
+    background-position: 0em 0em;
+    background-size: 100% 100%;
+  }
+
+  33% {
+    background-position: 0em -1.3em;
+  }
+
+  66% {
+    background-position: 0em -0.2em;
+    background-size: 100% 100%;
+  }
+
+  100% {
+    background-size: 100% 0;
+  }
+}

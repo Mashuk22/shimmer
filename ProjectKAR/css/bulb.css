@@ -1,0 +1,160 @@
+body {
+  background-color: black;
+}
+.branding {
+  height: 5.125em;
+}
+.branding img {
+  display: block;
+  height: 100%;
+  width: auto;
+  margin: 2em auto 0;
+  filter: invert(var(--invertation));
+}
+
+.bulb-container {
+  position: relative;
+  z-index: 20;
+  padding-top: 0em;
+}
+.bulb-container:after {
+  content: "";
+  width: 1.125em;
+  height: 0.5em;
+  background: url(../img/bulb/bulb-top.png);
+  background-size: 100% 100%;
+  position: absolute;
+  left: calc(50% - 0.5625em);
+  top: 0;
+}
+
+.bulb {
+  width: 3.375em;
+  margin: 0 auto;
+  transform-origin: center top;
+  animation: swing 3s ease-in-out infinite alternate;
+  z-index: 0;
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.bulb__image {
+  outline: none;
+  display: block;
+  top: 0;
+  width: 100%;
+  transform-origin: center top;
+  z-index: 0;
+  animation: scale 2.5s ease-in-out -1.5s infinite alternate;
+}
+.bulb__image:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0.625em;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 0 0 6.375em 4em var(--light);
+  opacity: 0.6;
+  transform: scaleY(0.7) translateY(-1em) translateX(0.4em);
+  transform-origin: center top;
+}
+.bulb__image img {
+  filter: saturate(0);
+  filter: saturate(var(--saturation));
+  width: 4vw;
+  z-index: -30;
+}
+
+.bulb:focus {
+  outline-offset: 1rem;
+  outline: none;
+}
+.bulb:active .bulb__image img,
+.bulb:hover .bulb__image img {
+  outline: none;
+  animation: flicker 2s linear infinite alternate;
+}
+.bulb:active .bulb__image:before,
+.bulb:hover .bulb__image:before {
+  outline: none;
+  animation: flicker-light 2s linear infinite alternate;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(4deg);
+  }
+  to {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.98);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  4%,
+  8%,
+  12%,
+  20%,
+  30%,
+  40%,
+  50%,
+  to {
+    filter: saturate(0);
+  }
+  2%,
+  6%,
+  10% {
+    filter: saturate(1.4);
+  }
+  25%,
+  35%,
+  45% {
+    filter: saturate(1.6);
+  }
+  80% {
+    filter: saturate(3);
+  }
+}
+
+@keyframes flicker-light {
+  0%,
+  4%,
+  8%,
+  12%,
+  20%,
+  30%,
+  40%,
+  50%,
+  to {
+    filter: saturate(0);
+    opacity: 0.5;
+  }
+  2%,
+  6%,
+  10% {
+    filter: saturate(1.4);
+    opacity: 0.6;
+  }
+  25%,
+  35%,
+  45% {
+    filter: saturate(1.6);
+    opacity: 0.6;
+  }
+  80% {
+    filter: saturate(3);
+    opacity: 0.7;
+  }
+}

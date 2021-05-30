@@ -1,0 +1,580 @@
+.modal-container {
+  display: none;
+  min-height: 100vh;
+  left: 0;
+  opacity: 0;
+  padding: 0 0 65px;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  z-index: -1;
+  transition: opacity 150ms;
+}
+@media screen and (max-width: 46.8125em) {
+  .modal-container {
+    padding: 0 0 32px;
+  }
+}
+
+.modal-container.js-is-active {
+  position: fixed;
+  display: block;
+  opacity: 0; /* visibility:visible; */
+  z-index: -10;
+  transition: opacity 0.3s ease-in-out, z-index 0.5s ease-in-out;
+}
+button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  display: inline-block;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+.modal-container button:-moz-focusring,
+.modal-container a:-moz-focusring {
+  outline: solid #ffffff 2px;
+}
+.modal-container--lowlight {
+  background-color: #212326;
+  color: #ffffff;
+}
+.modal-container--highlight {
+  background-color: #ffffff;
+  color: #212326;
+}
+.modal-container--lowlight {
+  background-color: #212326;
+  color: #ffffff;
+}
+.js-is-active .modal {
+  transform: scale(1);
+}
+.js-is-active > .drawer__item.accordion-link {
+  color: #212b36;
+  font-weight: 500;
+}
+.js-is-active > .drawer__item.accordion-link .marketing-nav__arrow {
+  fill: #212326;
+  transform: rotate(180deg) translateY(50%);
+}
+.cookies-notice.js-is-active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.in-page-menu a.js-is-active {
+  color: #000000;
+  border-color: #000000;
+}
+.modal {
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 130px;
+  padding-right: 32px;
+  padding-left: 32px;
+  max-width: 990px;
+  position: relative;
+  text-align: left;
+  transition: all 150ms ease-out;
+  transform: scale(0.85);
+}
+@media screen and (max-width: 46.8125em) {
+  .modal {
+    padding-top: 64px;
+  }
+}
+.js-is-active .modal {
+  transform: scale(1);
+}
+.modal:focus {
+  outline: none;
+}
+.modal__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.modal__controls {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  max-width: 990px;
+  text-align: right;
+}
+@media screen and (min-width: 67.5em) {
+  .signup-modal__controls {
+    max-width: calc(50% + 32px);
+  }
+}
+.modal__close {
+  margin: 0.625em -0.625em 0 0;
+  padding: 0.625em;
+  opacity: 0.7;
+  transition: opacity 300ms ease;
+}
+.modal__close:hover {
+  opacity: 1;
+}
+.modal__close .icon {
+  height: 16px;
+  width: 16px;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+.showvisuallyhidden,
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+.signup-modal__content {
+  width: 100%;
+}
+@media screen and (min-width: 67.5em) {
+  .signup-modal__content {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+.signup-modal__content .cta_wrapper {
+  text-align: right;
+}
+.signup-modal__content {
+  width: 100%;
+}
+@media screen and (min-width: 67.5em) {
+  .signup-modal__content {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+.signup-modal__content .cta_wrapper {
+  text-align: right;
+}
+.modal__heading {
+  font-family: camptonweb, sans-serif;
+
+  color: inherit;
+}
+.marketing-form--is-loading .marketing-button {
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  background-color: #828a91;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+.marketing-button[disabled]:hover,
+.marketing-button[disabled]:focus,
+.marketing-form--is-loading .marketing-button:hover,
+.marketing-form--is-loading .marketing-button:focus {
+  background-color: #727b82;
+  color: #ffffff;
+}
+.marketing-button[disabled]:active,
+.marketing-form--is-loading .marketing-button:active {
+  background-color: #697077;
+  color: #ffffff;
+}
+.marketing-button[disabled]:hover,
+.marketing-form--is-loading .marketing-button:hover {
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+}
+.marketing-button[disabled]:focus,
+.marketing-form--is-loading .marketing-button:focus {
+  box-shadow: 0 0 0.1875em 0.1875em rgba(130, 138, 145, 0.5);
+}
+.marketing-button[disabled]:hover,
+.marketing-button[disabled]:focus,
+.marketing-button[disabled]:active,
+.marketing-form--is-loading .marketing-button:hover,
+.marketing-form--is-loading .marketing-button:focus,
+.marketing-form--is-loading .marketing-button:active {
+  background-color: #828a91;
+}
+.marketing-form--is-loading button.marketing-button {
+  position: relative;
+}
+.marketing-form--is-loading button.marketing-button,
+.marketing-form--is-loading button.marketing-button:hover,
+.marketing-form--is-loading button.marketing-button:focus {
+  color: #828a91;
+}
+.marketing-form--is-loading button.marketing-button::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: -12px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  border-top-color: transparent;
+  animation: spin 1s infinite linear;
+}
+
+.stateful-form .js-is-pending::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -9px;
+  margin-top: -9px;
+  border-radius: 50%;
+  border: 3px solid #42474c;
+  border-top-color: transparent;
+  animation: spin 1s infinite linear;
+  z-index: 10;
+  right: 1.25em;
+  left: auto;
+  animation-duration: 0.5s;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stateful-form .marketing-input {
+  position: relative;
+  z-index: 1;
+}
+.stateful-form .js-is-hidden {
+  display: none;
+}
+.stateful-form .marketing-form__messages {
+  transform: translateY(-2px);
+  padding-top: 2px;
+  font-size: 1em;
+  max-height: 0;
+  overflow: hidden;
+  display: block;
+}
+@media screen and (min-width: 46.875em) {
+  .stateful-form .marketing-form__messages {
+    transition: max-height 300ms;
+  }
+}
+.stateful-form .marketing-form__messages .error {
+  color: #ffffff;
+  display: block;
+  font-size: 0.75em;
+  padding: 0.4166666667em 0.9375em;
+  position: relative;
+  min-height: 2em;
+}
+.stateful-form .marketing-form__messages .error.hide {
+  display: none;
+}
+.stateful-form .marketing-form__messages .error a,
+.stateful-form .marketing-form__messages .error button {
+  color: #ffffff;
+  text-decoration: underline;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  -webkit-text-decoration-style: solid;
+  text-decoration-style: solid;
+  -webkit-text-decoration-color: currentColor;
+  text-decoration-color: currentColor;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+.stateful-form .marketing-form__messages .error a:hover,
+.stateful-form .marketing-form__messages .error a:focus,
+.stateful-form .marketing-form__messages .error button:hover,
+.stateful-form .marketing-form__messages .error button:focus {
+  text-decoration: none;
+}
+.stateful-form .marketing-form__messages .error a:active,
+.stateful-form .marketing-form__messages .error button:active {
+  background-color: rgba(255, 255, 255, 0.125);
+}
+.stateful-form .marketing-form__messages .suggest {
+  color: #000000;
+  display: block;
+  font-size: 0.75em;
+  padding: 0.4166666667em 0.9375em;
+  position: relative;
+  min-height: 2em;
+}
+.stateful-form .marketing-form__messages .suggest.hide {
+  display: none;
+}
+.stateful-form .marketing-form__messages .suggest a,
+.stateful-form .marketing-form__messages .suggest button {
+  color: #000000;
+  text-decoration: underline;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  -webkit-text-decoration-style: solid;
+  text-decoration-style: solid;
+  -webkit-text-decoration-color: currentColor;
+  text-decoration-color: currentColor;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+.stateful-form .marketing-form__messages .suggest a:hover,
+.stateful-form .marketing-form__messages .suggest a:focus,
+.stateful-form .marketing-form__messages .suggest button:hover,
+.stateful-form .marketing-form__messages .suggest button:focus {
+  text-decoration: none;
+}
+.stateful-form .marketing-form__messages .suggest a:active,
+.stateful-form .marketing-form__messages .suggest button:active {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+.stateful-form .js-has-error + .marketing-form__messages {
+  background-color: #c43256;
+  box-shadow: 0 0 0 2px #c43256;
+  border-radius: 0 0 4px 4px;
+  max-height: 96px;
+}
+@media screen and (min-width: 46.875em) {
+  .stateful-form .js-has-error + .marketing-form__messages {
+    transition: max-height 300ms;
+  }
+}
+.stateful-form .js-has-hint + .marketing-form__messages {
+  background-color: #b9f0e9;
+  box-shadow: 0 0 0 2px #b9f0e9;
+  border-radius: 0 0 4px 4px;
+  max-height: 96px;
+}
+@media screen and (min-width: 46.875em) {
+  .stateful-form .js-has-hint + .marketing-form__messages {
+    transition: max-height 300ms;
+  }
+}
+.stateful-form .js-is-pending .marketing-input {
+  box-shadow: 0 0 0 1px #6b7177;
+}
+.stateful-form .js-is-pending + .marketing-form__messages {
+  max-height: 0;
+  box-shadow: none;
+}
+@media screen and (min-width: 46.875em) {
+  .stateful-form .js-is-pending + .marketing-form__messages {
+    transition: all 300ms;
+  }
+}
+.stateful-form .js-is-pending + .marketing-input-suffix {
+  opacity: 0.2;
+}
+.marketing-input {
+  margin-bottom: 0;
+  display: inline-block;
+  height: 3.2em;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 1em 0.9375em;
+  color: #212326;
+  font-family: camptonweb, sans-serif;
+
+  font-size: 1em;
+  box-shadow: 0 0 0 1px #6b7177;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: padding 150ms;
+  -webkit-appearance: none;
+  appearance: none;
+
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 1px #6b7177;
+}
+.marketing-input:focus {
+  color: #000000;
+  outline: 0;
+  box-shadow: 0 0 0 2px #008060;
+}
+.marketing-input[disabled] {
+  background-color: #d2d5d9;
+}
+
+.signup-modal__content .cta_wrapper {
+  text-align: right;
+}
+.marketing-button {
+  display: inline-block;
+  padding: 1em 1.8125em;
+  border-radius: 4px;
+  font-family: camptonweb, sans-serif;
+
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1.133;
+  transition: 150ms ease;
+  transition-property: background-color, border-color, box-shadow, color;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  background-color: #008060;
+  color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.marketing-button,
+.marketing-button:hover,
+.marketing-button:focus {
+  text-decoration: none;
+}
+.marketing-button:focus {
+  outline: 0;
+}
+@media screen and (min-width: 46.875em) {
+  .marketing-button + .marketing-button {
+    margin-left: 16px;
+  }
+}
+.marketing-button:hover,
+.marketing-button:focus {
+  background-color: #004c3f;
+  color: #ffffff;
+}
+.marketing-button:active {
+  background-color: #002e25;
+  color: #ffffff;
+  border-color: #002e25;
+}
+.marketing-button:hover {
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+}
+.marketing-button:focus {
+  box-shadow: 0 0 0.1875em 0.1875em rgba(0, 128, 96, 0.5);
+}
+.marketing-button[disabled],
+.marketing-form--is-loading .marketing-button {
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  background-color: #828a91;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+.marketing-button[disabled]:hover,
+.marketing-button[disabled]:focus,
+.marketing-form--is-loading .marketing-button:hover,
+.marketing-form--is-loading .marketing-button:focus {
+  background-color: #727b82;
+  color: #ffffff;
+}
+.marketing-button[disabled]:active,
+.marketing-form--is-loading .marketing-button:active {
+  background-color: #697077;
+  color: #ffffff;
+}
+.marketing-button[disabled]:hover,
+.marketing-form--is-loading .marketing-button:hover {
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+}
+.marketing-button[disabled]:focus,
+.marketing-form--is-loading .marketing-button:focus {
+  box-shadow: 0 0 0.1875em 0.1875em rgba(130, 138, 145, 0.5);
+}
+.marketing-button[disabled]:hover,
+.marketing-button[disabled]:focus,
+.marketing-button[disabled]:active,
+.marketing-form--is-loading .marketing-button:hover,
+.marketing-form--is-loading .marketing-button:focus,
+.marketing-form--is-loading .marketing-button:active {
+  background-color: #828a91;
+}
+.marketing-form--is-loading button.marketing-button {
+  position: relative;
+}
+.marketing-form--is-loading button.marketing-button,
+.marketing-form--is-loading button.marketing-button:hover,
+.marketing-form--is-loading button.marketing-button:focus {
+  color: #828a91;
+}
+.marketing-form--is-loading button.marketing-button::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: -12px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  border-top-color: transparent;
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.modal__close .icon {
+  height: 16px;
+  width: 16px;
+}
+.icon-modules-close-white {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2044%2044%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3Ecircle%2C%20ellipse%2C%20line%2C%20path%2C%20polygon%2C%20polyline%2C%20rect%2C%20text%20%7B%20fill%3A%20rgb%28255%2C%20255%2C%20255%29%20%21important%3B%20%7D%3C%2Fstyle%3E%3Cpath%20d%3D%22M39.196%2043.3L1.154%205.256l3.89-3.89%2038.04%2038.043z%22%2F%3E%3Cpath%20d%3D%22M.54%2039.413L38.58%201.37l3.89%203.89L4.428%2043.302z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+}
+.icon {
+  display: inline-block;
+  width: 0.8em;
+  height: 1em;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.task-input {
+  height: 10em;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 50vh;
+  min-height: 3.2em;
+}
