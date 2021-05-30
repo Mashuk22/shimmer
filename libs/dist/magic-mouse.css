@@ -1,0 +1,55 @@
+body #magicMouseCursor {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--color-cursor);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--colorinv-cursor), 0 0 0 1px var(--colorinv-cursor);
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transition: transform 0.03s, width 0.3s, height 0.3s;
+  pointer-events: none;
+}
+body #magicMouseCursor.cursor-square {
+  border-radius: 0;
+}
+
+body #magicPointer {
+  height: 6px;
+  width: 6px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: var(--color-cursor);
+  border: 1px solid var(--colorinv-cursor);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  transition: background 0.2s, border 0.2s, width 0.2s, height 0.2s,
+    box-shadow 0.2s;
+}
+
+body #magicPointer.is-hover {
+  background: red;
+}
+body #magicPointer.pointer-blur {
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: 1px solid var(--color-cursor);
+  box-shadow: 0px 0px 15px -5px var(--color-cursor);
+}
+body #magicPointer.pointer-overlay {
+  height: 50px;
+  width: 50px;
+  mix-blend-mode: difference;
+  box-shadow: 0px 0px 15px -5px black;
+}
+
+body .magic-hover {
+  transition: all 0.2s;
+}
+body .magic-hover:hover {
+  cursor: none;
+}

@@ -1,0 +1,72 @@
+:root {
+  --color-mode: "light";
+  --color-dark: #000504;
+  --color-light: #ffffff;
+  --color-dark-rgb: 0, 5, 4;
+  --color-light-rgb: 255, 255, 255;
+  --backgorund: #fff;
+  --text-color: #000504;
+  --light-color: #49fae6;
+  --light: #ffffff;
+  --saturation: 0;
+  --invert: none;
+  --invertation: 100%;
+  --color-cursor: black;
+  --colorinv-cursor: white;
+  --btn-background: #ffffff;
+  --btn-color: #000000;
+}
+
+body {
+  color: #000504;
+  background: var(--background);
+  color: var(--text-color);
+  font-family: camptonweb;
+  line-height: 1.5;
+}
+html,
+* {
+  cursor: none;
+}
+
+.transition-body body {
+  transition: background 0.5s ease-in-out, color 0.2s ease;
+}
+
+.branding img {
+  transition: filter 0.2s ease-in-out, color 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark";
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --background: var(--color-dark);
+    --text-color: var(--color-light);
+    --light: var(--light-color);
+    --saturation: 1;
+    --highlight: #00fdcf;
+    --invert: 0.8;
+    --invertation: 0%;
+    --color-cursor: white;
+    --colorinv-cursor: black;
+    --btn-background: #000000;
+    --btn-color: #00fdcf;
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  --background: var(--color-dark);
+  --text-color: var(--color-light);
+  --light: var(--light-color);
+  --saturation: 1;
+  --highlight: #00fdcf;
+  --invert: 0.8;
+  --invertation: 0%;
+  --color-cursor: white;
+  --colorinv-cursor: black;
+  --btn-background: #000000;
+  --btn-color: #00fdcf;
+}
